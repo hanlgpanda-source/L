@@ -1,1 +1,1458 @@
-https://hanlgpanda-source.github.io/CVHL/
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chúc Mừng Sinh Nhật Lan 🎂</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:
+        radial-gradient(circle at center,#ffe6f2 0%,#ffd1e5 45%,#f8b6d0 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:background 2s ease;
+}
+
+/* =========================
+   BẦU TRỜI
+========================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity 2s;
+    z-index:1;
+}
+
+.star{
+    position:absolute;
+    color:white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* =========================
+   TIM BAY
+========================= */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:3;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:#ff4f91;
+    font-size:25px;
+    animation:heartFly linear forwards;
+    filter:drop-shadow(0 0 8px #ff69b4);
+}
+
+@keyframes heartFly{
+
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.8);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:translateY(-50vh) rotate(180deg) scale(1.1);
+    }
+
+    100%{
+        transform:translateY(-115vh) rotate(360deg) scale(.5);
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    position:relative;
+    z-index:10;
+    text-align:center;
+    width:100%;
+    padding:20px;
+}
+
+.title{
+    font-size:clamp(25px,5vw,50px);
+    font-weight:900;
+    color:#d63384;
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ff69b4,
+        0 0 30px #ff1493;
+
+    animation:titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.04);
+    }
+
+}
+
+.subtitle{
+    font-size:clamp(16px,3vw,24px);
+    color:#8e2459;
+    margin-bottom:30px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown{
+    font-size:70px;
+    font-weight:900;
+    color:#ff1493;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px #ff69b4;
+
+    min-height:90px;
+}
+
+/* =========================
+   HỘP QUÀ
+========================= */
+
+.gift{
+    width:260px;
+    height:230px;
+    position:relative;
+    margin:20px auto;
+    cursor:pointer;
+
+    transition:transform .3s;
+}
+
+.gift:hover{
+    transform:scale(1.05);
+}
+
+.box{
+    position:absolute;
+    width:240px;
+    height:150px;
+    left:10px;
+    bottom:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f81,
+            #ff709f,
+            #ff4f81
+        );
+
+    border-radius:12px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25),
+        inset 0 0 20px rgba(255,255,255,.2);
+}
+
+.box::before{
+    content:"";
+    position:absolute;
+
+    width:38px;
+    height:150px;
+
+    left:101px;
+
+    background:#fff4c2;
+}
+
+.box::after{
+    content:"";
+    position:absolute;
+
+    width:240px;
+    height:25px;
+
+    top:60px;
+    left:0;
+
+    background:#ffd86b;
+}
+
+/* =========================
+   NẮP
+========================= */
+
+.lid{
+    position:absolute;
+
+    width:260px;
+    height:65px;
+
+    left:0;
+    top:30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff6b99,
+            #ff98b9,
+            #ff6b99
+        );
+
+    border-radius:12px;
+
+    z-index:5;
+
+    transform-origin:left center;
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+.lid::before{
+    content:"";
+
+    position:absolute;
+
+    width:40px;
+    height:65px;
+
+    left:110px;
+
+    background:#fff4c2;
+}
+
+.open .lid{
+    transform:
+        translateY(-100px)
+        rotate(-35deg);
+}
+
+/* =========================
+   NƠ
+========================= */
+
+.bow{
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.bow span{
+    position:absolute;
+
+    width:65px;
+    height:50px;
+
+    background:#ffd86b;
+
+    border-radius:
+        50% 50% 10% 50%;
+}
+
+.bow .left{
+    right:10px;
+    transform:rotate(30deg);
+}
+
+.bow .right{
+    left:10px;
+    transform:
+        scaleX(-1)
+        rotate(30deg);
+}
+
+.bow .center{
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    background:#ff9c35;
+
+    border-radius:50%;
+
+    left:-17px;
+    top:8px;
+}
+
+/* =========================
+   CLICK TEXT
+========================= */
+
+.tap-text{
+    font-size:clamp(17px,3vw,25px);
+    font-weight:bold;
+
+    color:#c2185b;
+
+    animation:blink 1.3s infinite;
+
+    margin-bottom:10px;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:.35;
+    }
+
+}
+
+/* =========================
+   NỘI DUNG SAU KHI MỞ
+========================= */
+
+.content{
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:20;
+
+    padding:25px;
+
+    overflow-y:auto;
+}
+
+.card{
+    width:min(900px,95vw);
+
+    padding:30px 25px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.3);
+
+    animation:cardAppear 1.5s ease;
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:
+            scale(.5)
+            translateY(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+/* =========================
+   TÊN
+========================= */
+
+.name{
+    font-size:clamp(30px,7vw,70px);
+
+    font-weight:1000;
+
+    color:#fff8a8;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ff69b4,
+        0 0 30px #ff1493,
+        0 0 50px #ff1493;
+
+    animation:nameGlow 1.8s infinite alternate;
+}
+
+@keyframes nameGlow{
+
+    from{
+        filter:brightness(1);
+    }
+
+    to{
+        filter:brightness(1.5);
+    }
+
+}
+
+/* =========================
+   BÁNH
+========================= */
+
+.cake{
+    position:relative;
+
+    width:180px;
+    height:120px;
+
+    margin:30px auto;
+}
+
+.cake-base{
+    position:absolute;
+
+    bottom:0;
+
+    width:180px;
+    height:75px;
+
+    border-radius:
+        15px 15px 25px 25px;
+
+    background:
+        linear-gradient(
+            #ff8eb1,
+            #ff4f81
+        );
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.3);
+}
+
+.cake-top{
+    position:absolute;
+
+    top:35px;
+
+    width:180px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:#fff1f5;
+}
+
+.candle{
+    position:absolute;
+
+    width:12px;
+    height:45px;
+
+    background:#fff;
+
+    top:0;
+
+    border-radius:5px;
+}
+
+.candle:nth-child(1){
+    left:55px;
+}
+
+.candle:nth-child(2){
+    left:84px;
+}
+
+.candle:nth-child(3){
+    left:113px;
+}
+
+.flame{
+    position:absolute;
+
+    width:18px;
+    height:25px;
+
+    background:#ffd84d;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    top:-22px;
+    left:-3px;
+
+    box-shadow:
+        0 0 10px #ffd84d,
+        0 0 25px #ff8c00;
+
+    animation:flame .5s infinite alternate;
+}
+
+@keyframes flame{
+
+    from{
+        transform:
+            rotate(-45deg)
+            scale(.8);
+    }
+
+    to{
+        transform:
+            rotate(-45deg)
+            scale(1.1);
+    }
+
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+    min-height:150px;
+
+    color:white;
+
+    font-size:clamp(18px,3vw,30px);
+
+    line-height:1.7;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #ff69b4;
+
+    margin-top:10px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+#wishButton{
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    margin-top:25px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff4081,
+            #ff1493,
+            #c2185b
+        );
+
+    box-shadow:
+        0 8px 25px rgba(255,20,147,.5);
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#wishButton:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   LỜI CHÚC THÊM
+========================= */
+
+#extraWish{
+    margin-top:25px;
+
+    font-size:22px;
+
+    color:#fff7c7;
+
+    font-weight:bold;
+
+    min-height:35px;
+
+    text-shadow:
+        0 0 10px #ff69b4;
+}
+
+/* =========================
+   CANVAS PHÁO HOA
+========================= */
+
+canvas{
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:15;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+    position:fixed;
+
+    width:10px;
+    height:18px;
+
+    top:-30px;
+
+    z-index:30;
+
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:600px){
+
+    .gift{
+        transform:scale(.85);
+    }
+
+    .gift:hover{
+        transform:scale(.9);
+    }
+
+    .card{
+        padding:25px 15px;
+    }
+
+    .message{
+        line-height:1.5;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     STARS
+========================= -->
+
+<div id="stars"></div>
+
+<!-- =========================
+     HEARTS
+========================= -->
+
+<div id="hearts"></div>
+
+<!-- =========================
+     FIREWORK CANVAS
+========================= -->
+
+<canvas id="fireworks"></canvas>
+
+
+<!-- =========================
+     MÀN HÌNH BAN ĐẦU
+========================= -->
+
+<div class="container" id="startScreen">
+
+    <div class="title">
+        🎂 HAPPY BIRTHDAY 🎂
+    </div>
+
+    <div class="subtitle">
+        Một món quà nhỏ dành riêng cho
+        <b>Hương Lan</b> 💖
+    </div>
+
+    <div class="tap-text" id="tapText">
+        🎁 Hãy nhấn vào hộp quà nhé! 🎁
+    </div>
+
+    <div id="countdown"></div>
+
+    <div class="gift" id="gift">
+
+        <div class="bow">
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="center"></span>
+        </div>
+
+        <div class="lid"></div>
+
+        <div class="box"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MÀN HÌNH SAU KHI MỞ QUÀ
+========================= -->
+
+<div class="content" id="content">
+
+    <div class="card">
+
+        <div class="name">
+            HƯƠNG LAN
+        </div>
+
+
+        <!-- BÁNH SINH NHẬT -->
+
+        <div class="cake">
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="cake-top"></div>
+
+            <div class="cake-base"></div>
+
+        </div>
+
+
+        <!-- LỜI CHÚC -->
+
+        <div class="message" id="message"></div>
+
+
+        <button id="wishButton">
+            💝 Nhận thêm một lời chúc
+        </button>
+
+
+        <div id="extraWish"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   TẠO SAO
+===================================================== */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star = document.createElement("div");
+
+    star.className="star";
+
+    star.innerHTML="✦";
+
+    star.style.left=Math.random()*100+"%";
+
+    star.style.top=Math.random()*100+"%";
+
+    star.style.fontSize=
+        (5+Math.random()*12)+"px";
+
+    star.style.animationDelay=
+        Math.random()*2+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* =====================================================
+   TIM BAY
+===================================================== */
+
+const hearts=document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    const icons=[
+        "❤",
+        "💖",
+        "💕",
+        "💗",
+        "💓",
+        "💝"
+    ];
+
+    heart.innerHTML=
+        icons[Math.floor(Math.random()*icons.length)];
+
+    heart.style.left=
+        Math.random()*100+"%";
+
+    heart.style.fontSize=
+        (18+Math.random()*35)+"px";
+
+    heart.style.animationDuration=
+        (6+Math.random()*7)+"s";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },14000);
+
+}
+
+setInterval(createHeart,300);
+
+
+/* =====================================================
+   PHÁO HOA
+===================================================== */
+
+const canvas=
+    document.getElementById("fireworks");
+
+const ctx=
+    canvas.getContext("2d");
+
+function resizeCanvas(){
+
+    canvas.width=window.innerWidth;
+
+    canvas.height=window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+let particles=[];
+
+
+class Particle{
+
+    constructor(x,y,color){
+
+        this.x=x;
+        this.y=y;
+
+        this.color=color;
+
+        const angle=
+            Math.random()*Math.PI*2;
+
+        const speed=
+            Math.random()*9+2;
+
+        this.vx=
+            Math.cos(angle)*speed;
+
+        this.vy=
+            Math.sin(angle)*speed;
+
+        this.life=100;
+
+        this.radius=
+            Math.random()*3+1;
+
+        this.gravity=.08;
+
+    }
+
+
+    update(){
+
+        this.x+=this.vx;
+
+        this.y+=this.vy;
+
+        this.vy+=this.gravity;
+
+        this.vx*=.98;
+
+        this.life--;
+
+    }
+
+
+    draw(){
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.radius,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle=this.color;
+
+        ctx.globalAlpha=
+            this.life/100;
+
+        ctx.fill();
+
+        ctx.globalAlpha=1;
+
+    }
+
+}
+
+
+function explosion(x,y){
+
+    const colors=[
+        "#ff1493",
+        "#ff69b4",
+        "#ffd700",
+        "#00ffff",
+        "#7fff00",
+        "#ffffff",
+        "#ff4500",
+        "#9b59ff"
+    ];
+
+    for(let i=0;i<160;i++){
+
+        particles.push(
+            new Particle(
+                x,
+                y,
+                colors[
+                    Math.floor(
+                        Math.random()*colors.length
+                    )
+                ]
+            )
+        );
+
+    }
+
+}
+
+
+function animateFireworks(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(
+        (p,index)=>{
+
+            p.update();
+
+            p.draw();
+
+            if(p.life<=0){
+
+                particles.splice(index,1);
+
+            }
+
+        }
+    );
+
+    requestAnimationFrame(
+        animateFireworks
+    );
+
+}
+
+animateFireworks();
+
+
+function randomFirework(){
+
+    explosion(
+        Math.random()*canvas.width,
+        Math.random()*canvas.height*.55
+    );
+
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+function createConfetti(){
+
+    const pieces=[
+        "🎉",
+        "🎊",
+        "✨",
+        "💖",
+        "🌸",
+        "⭐"
+    ];
+
+    for(let i=0;i<100;i++){
+
+        const confetti=
+            document.createElement("div");
+
+        confetti.className="confetti";
+
+        confetti.innerHTML=
+            pieces[
+                Math.floor(
+                    Math.random()*pieces.length
+                )
+            ];
+
+        confetti.style.left=
+            Math.random()*100+"%";
+
+        confetti.style.fontSize=
+            (12+Math.random()*20)+"px";
+
+        confetti.style.animationDuration=
+            (3+Math.random()*4)+"s";
+
+        confetti.style.animationDelay=
+            Math.random()*2+"s";
+
+        document.body.appendChild(
+            confetti
+        );
+
+        setTimeout(()=>{
+            confetti.remove();
+        },7000);
+
+    }
+
+}
+
+
+/* =====================================================
+   MỞ HỘP QUÀ
+===================================================== */
+
+const gift=
+    document.getElementById("gift");
+
+const tapText=
+    document.getElementById("tapText");
+
+const countdown=
+    document.getElementById("countdown");
+
+const startScreen=
+    document.getElementById("startScreen");
+
+const content=
+    document.getElementById("content");
+
+let opened=false;
+
+
+gift.addEventListener("click",()=>{
+
+    if(opened) return;
+
+    opened=true;
+
+    tapText.innerHTML=
+        "✨ Món quà đang được mở... ✨";
+
+    let number=5;
+
+    countdown.innerHTML=number;
+
+
+    const timer=setInterval(()=>{
+
+        number--;
+
+        if(number>0){
+
+            countdown.innerHTML=number;
+
+        }
+        else{
+
+            clearInterval(timer);
+
+            countdown.innerHTML="🎉";
+
+            openGift();
+
+        }
+
+    },1000);
+
+});
+
+
+/* =====================================================
+   HIỆU ỨNG MỞ QUÀ
+===================================================== */
+
+function openGift(){
+
+    gift.classList.add("open");
+
+    /* pháo hoa liên tục */
+
+    for(let i=0;i<8;i++){
+
+        setTimeout(
+            randomFirework,
+            i*300
+        );
+
+    }
+
+    /* confetti */
+
+    createConfetti();
+
+
+    setTimeout(()=>{
+
+        startScreen.style.display="none";
+
+        content.style.display="flex";
+
+        document.body.style.background=
+            "radial-gradient(circle at center,#180020,#05000c 70%)";
+
+        stars.style.opacity="1";
+
+        typeMessage();
+
+    },1500);
+
+}
+
+
+/* =====================================================
+   LỜI CHÚC GÕ TỪNG CHỮ
+===================================================== */
+
+const text=
+`🎂 Chúc Lan có một sinh nhật thật vui vẻ! ❤️
+
+Tuổi mới chúc Lan luôn xinh đẹp, luôn rạng rỡ, luôn giữ được nụ cười thật tươi và gặp thật nhiều điều may mắn.
+
+🌸 Chúc những điều Lan mong muốn đều từng bước trở thành hiện thực.
+
+📚 Học tập thật tốt.
+🌟 Cuộc sống luôn thuận lợi.
+🍀 Mỗi ngày đều có thật nhiều niềm vui.
+💖 Và quan trọng nhất... phải luôn yêu thương bản thân mình thật nhiều! 
+
+Chúc Lan có một tuổi mới thật đáng nhớ! 🎁✨
+
+Và mong tình bạn của mình được kéo dài! (as much as possible)
+🎂💖`;
+
+const message=
+    document.getElementById("message");
+
+let index=0;
+
+
+function typeMessage(){
+
+    if(index<text.length){
+
+        message.innerHTML+=
+            text.charAt(index);
+
+        index++;
+
+        setTimeout(
+            typeMessage,
+            45
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   NHỮNG LỜI CHÚC NGẪU NHIÊN
+===================================================== */
+
+const wishes=[
+
+"🌸 Mong mọi ngày của Lan đều dịu dàng như một đóa hoa.",
+
+"🍀 Chúc Lan gặp thật nhiều may mắn trên hành trình phía trước.",
+
+"💖 Mong Lan luôn được yêu thương và trân trọng.",
+
+"🌟 Chúc mọi ước mơ của Lan sớm trở thành hiện thực.",
+
+"🎓 Chúc Lan học tập thật tốt và đạt được những điều mình mong muốn.",
+
+"😊 Chúc Lan mỗi ngày đều có ít nhất một lý do để mỉm cười.",
+
+"✨ Tuổi mới — phiên bản mới — thật nhiều điều tuyệt vời!",
+
+"🎁 Mong năm nay sẽ mang đến cho Lan thật nhiều bất ngờ đẹp đẽ.",
+
+"💐 Chúc Lan luôn xinh đẹp, vui vẻ và tràn đầy năng lượng.",
+
+"❤️ Chúc Lan có một năm tuổi mới thật hạnh phúc!"
+
+];
+
+
+const wishButton=
+    document.getElementById("wishButton");
+
+const extraWish=
+    document.getElementById("extraWish");
+
+
+wishButton.addEventListener(
+    "click",
+    ()=>{
+
+        const wish=
+            wishes[
+                Math.floor(
+                    Math.random()*wishes.length
+                )
+            ];
+
+        extraWish.innerHTML="";
+
+        let i=0;
+
+        function typeWish(){
+
+            if(i<wish.length){
+
+                extraWish.innerHTML+=
+                    wish.charAt(i);
+
+                i++;
+
+                setTimeout(
+                    typeWish,
+                    35
+                );
+
+            }
+
+        }
+
+        typeWish();
+
+        /* thêm pháo hoa */
+
+        for(let i=0;i<3;i++){
+
+            setTimeout(
+                randomFirework,
+                i*400
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLICK CHUỘT → HIỆU ỨNG TIM
+===================================================== */
+
+document.addEventListener(
+    "click",
+    (event)=>{
+
+        for(let i=0;i<5;i++){
+
+            const heart=
+                document.createElement("div");
+
+            heart.innerHTML="❤";
+
+            heart.style.position="fixed";
+
+            heart.style.left=
+                event.clientX+"px";
+
+            heart.style.top=
+                event.clientY+"px";
+
+            heart.style.color="#ff69b4";
+
+            heart.style.fontSize=
+                (15+Math.random()*20)+"px";
+
+            heart.style.pointerEvents="none";
+
+            heart.style.zIndex="100";
+
+            document.body.appendChild(
+                heart
+            );
+
+            const x=
+                (Math.random()-.5)*150;
+
+            const y=
+                -Math.random()*150;
+
+            heart.animate(
+
+                [
+                    {
+                        transform:"translate(0,0)",
+                        opacity:1
+                    },
+
+                    {
+                        transform:
+                            `translate(${x}px,${y}px)`,
+                        opacity:0
+                    }
+                ],
+
+                {
+                    duration:1000,
+                    easing:"ease-out"
+                }
+
+            );
+
+            setTimeout(
+                ()=>heart.remove(),
+                1000
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PHÁO HOA ĐỊNH KỲ SAU KHI MỞ
+===================================================== */
+
+setInterval(()=>{
+
+    if(opened){
+
+        randomFirework();
+
+    }
+
+},2500);
+
+</script>
+
+</body>
+</html>
